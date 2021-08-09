@@ -4,12 +4,13 @@
   "description": "mern application",
   "main": "server.js",
   "scripts": {
-    "setup":"npm install && cd client && npm install",
+    "setup": "npm install && cd client && npm install",
+    "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon server/server.js ",
     "client": "cd client && npm start",
-    "dev":"concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
-
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
@@ -22,5 +23,8 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
