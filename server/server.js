@@ -7,7 +7,7 @@ const app = express();
 const moongoseDb =require('./Db/index');
 const personRouter=require('./Routes/PersonRouter')
 const path = require('path')
-const PORT = process.env.PORT | 8080;
+const PORT = process.env.PORT || 8080;
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(cors())
@@ -24,7 +24,7 @@ app.listen(PORT, (err) => {
 // app.get('/', (req, res) => {
 //     res.send("sucsses");
 // })
-app.use('/api/persons',personRouter)
+app.use('/api/person',personRouter)
 
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static(path.join(__dirname,'../client/build')))
