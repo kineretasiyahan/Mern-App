@@ -24,7 +24,7 @@ app.listen(PORT, (err) => {
 // app.get('/', (req, res) => {
 //     res.send("sucsses");
 // })
-app.use('api/person',personRouter)
+app.use('/api/persons',personRouter)
 
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static(path.join(__dirname,'../client/build')))
