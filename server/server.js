@@ -1,14 +1,16 @@
 const dotenv = require('dotenv').config();
-const PORT = process.env.PORT | 2300;
+const cors=require('cors')
 const express = require('express');
 const app = express();
 // const mongoClient = require('mongodb').MongoClient;
 // const MONGOURL = "mongodb+srv://kineret:Aa123456!@cluster0.udluj.mongodb.net/myFirstDataBase?retryWrites=true&w=majority";
-const path = require('path')
 const moongoseDb =require('./Db/index');
 const personRouter=require('./Routes/PersonRouter')
+const path = require('path')
+const PORT = process.env.PORT | 8080;
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
+app.use(cors())
 moongoseDb.on("error",()=>{console.log("moongose error")})
 
 // mongoClient.connect(MONGOURL, (error, connection) => {
