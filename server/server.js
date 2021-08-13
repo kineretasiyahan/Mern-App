@@ -7,7 +7,7 @@ const app = express();
 const moongoseDb =require('./Db/index');
 const personRouter=require('./Routes/PersonRouter')
 const path = require('path')
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(cors())

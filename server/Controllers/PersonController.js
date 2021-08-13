@@ -61,8 +61,8 @@ async function deletePerson(req, res) {
         })
     }
     catch (err) {
-        const errorMsg = { error: err, massage: "error in deletePerson" }
-        res.json(errorMsg.massage)
+        const errorMsg = { error: err, massage: "error in deletePerson"} 
+        res.json(errorMsg.massage) 
     }
 }
 module.exports={ getPersons, createPerson, putPerson, deletePerson, getPersonByName };
