@@ -21,9 +21,9 @@ app.listen(PORT, (err) => {
     if (err) return console.log(err);
     console.log("succses");
 });
-// app.get('/', (req, res) => {
-//     res.send("sucsses");
-// })
+app.get('/', (req, res) => {
+    res.send("sucsses");
+})
 app.use('/api/person',personRouter)
 
 if(process.env.NODE_ENV === 'production'){
